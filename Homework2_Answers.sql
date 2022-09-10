@@ -19,4 +19,4 @@ select productLine from classicmodels.products where productDescription like "%r
 -- show product name for vendor 'Unimax Art Galleries'
 select productName from classicmodels.products where productVendor = "Unimax Art Galleries";
 -- what is the customer number for the highest amount of payment
-select customerNumber, avg(amount) from classicmodels.payments group by customerNumber order by `avg(amount)` desc limit 1;
+select customerNumber, sum(amount) from classicmodels.payments group by customerNumber order by `sum(amount)` desc limit 1;
